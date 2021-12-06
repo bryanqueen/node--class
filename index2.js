@@ -2,6 +2,11 @@ const http = require('http');
 const { Server } = require('https');
 const fs =require('fs');
 const path = require('path')
+let data =[
+    {name:'Daniel'},
+    {name:'Davidson'},
+    {name:'Bryan'},
+]
 
 server = http.createServer((req,res)=>{
     switch (req.url) {
@@ -28,6 +33,15 @@ server = http.createServer((req,res)=>{
             res.end();
             
             break;
+            
+            case '/api/names':
+            res.writeHead(201,{"content-type": "application/json"});
+            res.write(JSON.stringify(data));
+            res.end();
+            
+            break;
+            
+        
           
     
         default:

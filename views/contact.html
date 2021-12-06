@@ -15,6 +15,28 @@
     
 
     </p>
+    <div class="post">
+
+    </div>
     
 </body>
+<script>
+ fetch('http://jsonplaceholder.typicode.com/users/').then((response)=>  response.json())
+ .then((data)=>{
+     for (let index = 0; index < data.length; index++) {
+         const element = data[index];
+         document.querySelector(".post").innerHTML +=`
+         <h1>${element.name}</h1>
+         <p>${element.id}</h1>
+        <p>${element.email}</p>
+        <p>${element.address.city}</p>
+        <p>${element.address.street}</p>
+        <p>${element.phone}</p>
+        <p>${element.company.name}</p>`
+
+
+
+     }
+ })
+</script>
 </html>
