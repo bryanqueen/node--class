@@ -75,4 +75,7 @@ fs.writeFile(fileNine + 'script.js', 'I love coding sha', (err)=>{
     }
 )
 
+let fileTen = path.join(__dirname, 'Project/Client/views')
+fs.writeFile(fileTen + '')
+
 
